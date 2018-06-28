@@ -53,7 +53,7 @@
 
   <!-- Action clientes -->
   <record id="action_guiaeco_clientes" model="ir.actions.act_window">
-    <field name="name">action.guiaeco.clientes</field>
+    <field name="name">Clientes</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">guiaeco.clientes</field>
     <field name="view_mode">tree,form</field>
