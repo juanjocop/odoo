@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dev-addons/library_dev-addons/library,dev-addons/library.dev-addons/library,model_dev-addons/library_dev-addons/library,,1,0,0,0
+access_dev-addons/guiaeco_dev-addons/guiaeco,dev-addons/guiaeco.dev-addons/guiaeco,model_dev-addons/guiaeco_dev-addons/guiaeco,,1,0,0,0
