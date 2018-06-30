@@ -11,8 +11,6 @@
           <group>
             <field name="idcliente"/>
             <field name="activo"/>
-            <field name="imagenPlaca"/>
-            <field name="cabecera"/>
             <field name="especialidad"/>
             <field name="mapaG"/>
             <field name="calidadPresentacion"/>
@@ -20,6 +18,8 @@
             <field name="calidadRecomienda"/>
             <field name="calidadBeneficios"/>
             <field name="calidadValora"/>
+            <field name="imagenPlaca"/>
+            <field name="cabecera"/>
           </group>
         </sheet>
       </form>
@@ -36,8 +36,6 @@
           <group>
             <field name="idcliente"/>
             <field name="activo"/>
-            <field name="imagenPlaca"/>
-            <field name="cabecera"/>
             <field name="especialidad"/>
             <field name="mapaG"/>
             <field name="calidadPresentacion"/>
@@ -45,6 +43,8 @@
             <field name="calidadRecomienda"/>
             <field name="calidadBeneficios"/>
             <field name="calidadValora"/>
+            <field name="imagenPlaca"/>
+            <field name="cabecera"/>
           </group>
         </sheet>
       </form>

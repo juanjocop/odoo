@@ -19,8 +19,6 @@ class GuiaecoClientes(models.Model):
 
     idcliente = fields.Integer(string='Id Cliente')
     activo = fields.Boolean(string='Activo?')
-    imagenPlaca = fields.Binary(string='Imagen placa cliente')
-    cabecera = fields.Binary(string='Cabecera cliente')
     especialidad = fields.Char(string='Especialidad')
     mapaG = fields.Char(string='Enlace Mapa')
     calidadPresentacion = fields.Char(string='Como valora la presentación del producto?')
@@ -28,3 +26,5 @@ class GuiaecoClientes(models.Model):
     calidadRecomienda = fields.Boolean(string='Lo recomendaría a otras personas?')
     calidadBeneficios = fields.Char(string='Beneficios importantes para usted y su negocio')
     calidadValora = fields.Integer(string='Como valora eOZONE y ecoWORLD?')
+    imagenPlaca = fields.Binary(string='Imagen placa cliente')
+    cabecera = fields.Binary(string='Cabecera cliente')
