@@ -58,11 +58,16 @@
     -->
 
     <!-- List Definition -->
-    <record id="guiaeco.list" model='ir.ui.view'>
+    <record id="guiaecoworld_clientes.form" model='ir.ui.view'>
       <field name="name">Lista Guia ecoWORLD</field>
       <field name="model">guiaeco.clientes</field>
       <field name="arch" type="xml">
-          <tree>
+        <form string="Form cliente">
+          <sheet>
+            <group>
+              <field name="imagenTestimonio" widget="image"/>
+            </group>
+            <group>
               <field name="activo"/>
               <field name="especialidad"/>
               <field name="mapaG"/>
@@ -73,12 +78,14 @@
               <field name="calidadValora"/>
               <field name="imagenPlaca"/>
               <field name="cabecera"/>
-          </tree>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
     <!-- Action clientes -->
-    <record id="guiaeco.action_window" model="ir.actions.act_window">
+    <record id="guiaecoworld.action_window" model="ir.actions.act_window">
       <field name="name">Clientes</field>
       <field name="res_model">guiaeco.clientes</field>
       <field name="view_mode">tree,form</field>
@@ -86,10 +93,10 @@
 
     <!-- Menus -->
     <!-- Top Menu -->
-    <menuitem id="guiaeco.menu_root" name="Guía ecoWORLD" sequence="1"/>
+    <menuitem id="guiaecoworld.menu_root" name="Guía ecoWORLD" sequence="1"/>
     <!-- Menu Categorias -->
-    <menuitem id="guiaeco.clientes" name="Clientes" sequence="1" parent="guiaeco.menu_root"/>
+    <menuitem id="guiaecoworld.clientes" name="Clientes" sequence="1" parent="guiaecoworld.menu_root"/>
     <!-- Action Menu -->
-    <menuitem id="guiaeco.clientes_lista" name="Clientes" sequence="1" parent="guiaeco.clientes" action="guiaeco.action_window"/>
+    <menuitem id="guiaecoworld.clientes_lista" name="Clientes" sequence="1" parent="guiaecoworld.clientes" action="guiaecoworld.action_window"/>
   </data>
 </odoo>
