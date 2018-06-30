@@ -3,8 +3,7 @@
     'name': "Guia ecoWORLD",
 
     'summary': """
-        Desarrollo de la Guia ecoWORLD
-    """,
+        Desarrollo de la Guia ecoWORLD""",
 
     'description': """
         Descripción Larga de la guiaaaa

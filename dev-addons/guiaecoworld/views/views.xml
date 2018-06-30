@@ -1,0 +1,95 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="guiaeco.list">
+      <field name="name">guiaeco list</field>
+      <field name="model">guiaeco.guiaeco</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="guiaeco.action_window">
+      <field name="name">guiaeco window</field>
+      <field name="res_model">guiaeco.guiaeco</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="guiaeco.action_server">
+      <field name="name">guiaeco server</field>
+      <field name="model_id" ref="model_guiaeco_guiaeco"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="guiaeco" id="guiaeco.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="guiaeco.menu_1" parent="guiaeco.menu_root"/>
+    <menuitem name="Menu 2" id="guiaeco.menu_2" parent="guiaeco.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="guiaeco.menu_1_list" parent="guiaeco.menu_1"
+              action="guiaeco.action_window"/>
+    <menuitem name="Server to list" id="guiaeco" parent="guiaeco.menu_2"
+              action="guiaeco.action_server"/>
+    -->
+
+    <!-- List Definition -->
+    <record id="guiaeco.list" model='ir.ui.view'>
+      <field name="name">Lista Guia ecoWORLD</field>
+      <field name="model">guiaeco.clientes</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="activo"/>
+              <field name="especialidad"/>
+              <field name="mapaG"/>
+              <field name="calidadPresentacion"/>
+              <field name="calidadTrato"/>
+              <field name="calidadRecomienda"/>
+              <field name="calidadBeneficios"/>
+              <field name="calidadValora"/>
+              <field name="imagenPlaca"/>
+              <field name="cabecera"/>
+          </tree>
+      </field>
+    </record>
+
+    <!-- Action clientes -->
+    <record id="guiaeco.action_window" model="ir.actions.act_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">guiaeco.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <!-- Top Menu -->
+    <menuitem id="guiaeco.menu_root" name="Guía ecoWORLD" sequence="1"/>
+    <!-- Menu Categorias -->
+    <menuitem id="guiaeco.clientes" name="Clientes" sequence="1" parent="guiaeco.menu_root"/>
+    <!-- Action Menu -->
+    <menuitem id="guiaeco.clientes_lista" name="Clientes" sequence="1" parent="guiaeco.clientes" action="guiaeco.action_window"/>
+  </data>
+</odoo>
