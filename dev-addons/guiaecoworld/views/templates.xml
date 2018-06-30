@@ -18,5 +18,10 @@
         <!--     </t> -->
         <!--   </dl> -->
         <!-- </template> -->
+        <template id="assets_backend" inherit_id="web.assets_backend">
+          <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/guiaecoworld/static/src/css/sheet.css"/> 
+          </xpath>
+        </template>
     </data>
 </odoo>

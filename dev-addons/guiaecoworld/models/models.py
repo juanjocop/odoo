@@ -14,7 +14,7 @@ from odoo import models, fields, api
 #     def _value_pc(self):
 #         self.value2 = float(self.value) / 100
 
-class guiaeco(models.Model):
+class guiaecoworld(models.Model):
     _name = 'guiaeco.clientes'
 
     imagenTestimonio = fields.Binary()

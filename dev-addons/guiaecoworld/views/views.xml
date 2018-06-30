@@ -57,17 +57,13 @@
               action="guiaeco.action_server"/>
     -->
 
-    <!-- List Definition -->
-    <record id="guiaecoworld_clientes.form" model='ir.ui.view'>
+    <!-- Tree Definition -->
+    <record id="guiaecoworld_tree_view" model='ir.ui.view'>
       <field name="name">Lista Guia ecoWORLD</field>
       <field name="model">guiaeco.clientes</field>
       <field name="arch" type="xml">
-        <form string="Form cliente">
-          <sheet>
-            <group>
-              <field name="imagenTestimonio" widget="image"/>
-            </group>
-            <group>
+        <tree string="Vista Árbol">
+              <field name="imagenTestimonio" widget="image" class="cara_clientes" />
               <field name="activo"/>
               <field name="especialidad"/>
               <field name="mapaG"/>
@@ -78,7 +74,34 @@
               <field name="calidadValora"/>
               <field name="imagenPlaca"/>
               <field name="cabecera"/>
-            </group>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form Definition -->
+    <record id="guiaecoworld_form_view" model='ir.ui.view'>
+      <field name="name">Form Guia ecoWORLD</field>
+      <field name="model">guiaeco.clientes</field>
+      <field name="arch" type="xml">
+        <form string="Vista Form">
+          <sheet>
+              <field name="imagenTestimonio" widget="image" class="cara_clientes" />
+              <group>
+                <field name="activo"/>
+                <field name="especialidad"/>
+                <field name="mapaG"/>
+              </group>
+              <group>
+                <field name="calidadPresentacion"/>
+                <field name="calidadTrato"/>
+                <field name="calidadRecomienda"/>
+                <field name="calidadBeneficios"/>
+                <field name="calidadValora"/>
+              </group>
+              <group>
+                <field name="imagenPlaca"/>
+                <field name="cabecera"/>
+              </group>
           </sheet>
         </form>
       </field>
