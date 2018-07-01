@@ -59,11 +59,13 @@
 
     <!-- Tree Definition -->
     <record id="guiaecoworld_tree_view" model='ir.ui.view'>
-      <field name="name">Lista Guia ecoWORLD</field>
+      <field name="name">Tree Guia ecoWORLD</field>
       <field name="model">guiaeco.clientes</field>
+      <!-- <field name='inherit_id' ref="base.view_partner_tree" /> -->
       <field name="arch" type="xml">
-        <tree string="Vista Árbol">
-              <field name="imagenTestimonio" widget="image" class="cara_clientes" />
+        <!-- <field name="active" position="after"> -->
+        <tree>
+              <field name="id_cliente" />
               <field name="activo"/>
               <field name="especialidad"/>
               <field name="mapaG"/>
@@ -75,6 +77,7 @@
               <field name="imagenPlaca"/>
               <field name="cabecera"/>
         </tree>
+        <!-- </field> -->
       </field>
     </record>
 
@@ -85,7 +88,7 @@
       <field name="arch" type="xml">
         <form string="Vista Form">
           <sheet>
-              <field name="imagenTestimonio" widget="image" class="cara_clientes" />
+              <field name="id_cliente" />
               <group>
                 <field name="activo"/>
                 <field name="especialidad"/>

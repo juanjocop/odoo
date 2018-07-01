@@ -17,8 +17,7 @@ from odoo import models, fields, api
 class guiaecoworld(models.Model):
     _name = 'guiaeco.clientes'
 
-    imagenTestimonio = fields.Binary()
-    idcliente = fields.Integer()
+    id_cliente = fields.Many2one("res.partner", string="Cliente")
     activo = fields.Boolean()
     especialidad = fields.Char()
     mapaG = fields.Char()
