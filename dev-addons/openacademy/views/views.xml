@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <data>
-
     <record model="ir.ui.view" id="vista_form_curso">
       <field name="name">curso.form</field>
       <field name="model">openacademy.curso</field>
@@ -124,7 +122,4 @@
     </record>
 
     <menuitem id="menu_sesion" name="Sesiones" parent="openacademy_menu" action="sesion_list_action"/>
-
-
-  </data>
 </odoo>
