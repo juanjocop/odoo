@@ -1,60 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <data>
-    <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="openacademy.list">
-      <field name="name">openacademy list</field>
-      <field name="model">openacademy.openacademy</field>
+    <record model="ir.ui.view" id="vista_form_curso">
+      <field name="name">curso.form</field>
+      <field name="model">openacademy.curso</field>
       <field name="arch" type="xml">
-        <tree>
+        <form string="Form Curso">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="responsable_id"/>
+            </group>
+            <notebook>
+              <page string="Descripción">
+                <field name="description"/>
+              </page>
+              <page string="Sesiones">
+                <field name="sesion_id">
+                  <tree string="Sesiones registradas">
+                    <field name="name"/>
+                    <field name="instructor_id"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_busqueda_curso">
+      <field name="name">curso.busqueda</field>
+      <field name="model">openacademy.curso</field>
+      <field name="arch" type="xml">
+        <search>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_tree_curso">
+      <field name="name">curso.tree</field>
+      <field name="model">openacademy.curso</field>
+      <field name="arch" type="xml">
+        <tree string="Curso Tree">
+          <field name="name"/>
+          <field name="responsable_id"/>
         </tree>
       </field>
     </record>
 
+    <!-- acción de ventana -->
+    <!--
+      La siguiente etiqueta es una definición de acción para una "acción de ventana",
+      esa es una acción que abre una vista o un conjunto de vistas
+    -->
 
-    <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="openacademy.action_window">
-      <field name="name">openacademy window</field>
-      <field name="res_model">openacademy.openacademy</field>
+    <record model="ir.actions.act_window" id="curso_list_action">
+      <field name="name">Cursos</field>
+      <field name="res_model">openacademy.curso</field>
+      <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
-    </record>
-
-
-    <!-- server action to the one above -->
-
-    <record model="ir.actions.server" id="openacademy.action_server">
-      <field name="name">openacademy server</field>
-      <field name="model_id" ref="model_openacademy_openacademy"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": "openacademy.openacademy",
-        }
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Crea el primer curso</p>
       </field>
     </record>
 
+    <!-- top level menu: no parent -->
 
-    <!-- Top menu item -->
+    <menuitem id="main_openacademy_menu" name="Open Academy"/>
+    <!-- A first level in the left side menu is needed
+     before using action= attribute -->
+    <menuitem id="openacademy_menu" name="Open Academy" parent="main_openacademy_menu"/>
+    <!-- the following menuitem should appear *after*
+     its parent openacademy_menu and *after* its
+     action course_list_action -->
+    <menuitem id="curso_menu" name="Cursos" parent="openacademy_menu" action="curso_list_action"/>
+    <!-- Full id location:
+         action="openacademy.course_list_action"
+         It is not required when it is the same module -->
 
-    <menuitem name="openacademy" id="openacademy.menu_root"/>
+    <record model="ir.ui.view" id="vista_form_sesion">
+      <field name="name">Form Sesión</field>
+      <field name="model">openacademy.sesion</field>
+      <field name="arch" type="xml">
+        <form string="Form Sesion">
+          <sheet>
+            <group string="General">
+              <field name="curso_id"/>
+              <field name="name"/>
+              <field name="instructor_id"/>
+            </group>
+            <group string="Schedule">
+              <field name="start_date"/>
+              <field name="duration"/>
+              <field name="seats"/>
+            </group>
+            <label for="asistente_id"/>
+            <field name="asistente_id"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
-    <!-- menu categories -->
+    <record model="ir.ui.view" id="vista_tree_sesion">
+      <field name="name">sesion.tree</field>
+      <field name="model">openacademy.sesion</field>
+      <field name="arch" type="xml">
+        <tree string="Sesion Tree">
+          <field name="name"/>
+          <field name="curso_id"/>
+        </tree>
+      </field>
+    </record>
 
-    <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/>
-    <menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>
+    <record model="ir.actions.act_window" id="sesion_list_action">
+      <field name="name">Sesiones</field>
+      <field name="res_model">openacademy.sesion</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
-    <!-- actions -->
+    <menuitem id="menu_sesion" name="Sesiones" parent="openacademy_menu" action="sesion_list_action"/>
 
-    <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
-              action="openacademy.action_window"/>
-    <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
-              action="openacademy.action_server"/>
 
   </data>
 </odoo>
