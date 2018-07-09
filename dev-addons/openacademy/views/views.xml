@@ -90,11 +90,13 @@
               <field name="curso_id"/>
               <field name="name"/>
               <field name="instructor_id"/>
+              <field name="activo"/>
             </group>
             <group string="Schedule">
               <field name="start_date"/>
               <field name="duration"/>
               <field name="seats"/>
+              <field name="asientos_ocupados" widget="progressbar"/>
             </group>
             <label for="asistente_id"/>
             <field name="asistente_id"/>
@@ -107,9 +109,11 @@
       <field name="name">sesion.tree</field>
       <field name="model">openacademy.sesion</field>
       <field name="arch" type="xml">
-        <tree string="Sesion Tree">
+        <tree string="Sesion Tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
           <field name="name"/>
           <field name="curso_id"/>
+          <field name="duration" invisible="1"/>
+          <field name="asientos_ocupados"/>
         </tree>
       </field>
     </record>
