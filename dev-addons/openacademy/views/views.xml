@@ -35,6 +35,10 @@
         <search>
           <field name="name"/>
           <field name="description"/>
+          <filter name="mis_cursos" string="Mis Cursos" domain="[('responsable_id', '=', 'uid')]"/>
+          <group string="Agrupado por">
+            <filter name="por_responsable" string="Responsable" context="{'group_by': 'responsable_id'}"/>
+          </group>
         </search>
       </field>
     </record>
@@ -61,6 +65,7 @@
       <field name="res_model">openacademy.curso</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
+      <field name="context" eval="{'search_default_my_courses': 1}"/>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">Crea el primer curso</p>
       </field>
@@ -118,11 +123,22 @@
       </field>
     </record>
 
+    <!-- Vista Calendario -->
+    <record model="ir.ui.view" id="vista_calendario_sesion">
+      <field name="name">sesion.calendario</field>
+      <field name="model">openacademy.sesion</field>
+      <field name="arch" type="xml">
+        <calendar string="Calendario de sesion" date_start="start_date" date_stop="fecha_fin" color="instructor_id">
+          <field name="name"/>
+        </calendar>
+      </field>
+    </record>
+
     <record model="ir.actions.act_window" id="sesion_list_action">
       <field name="name">Sesiones</field>
       <field name="res_model">openacademy.sesion</field>
       <field name="view_type">form</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <menuitem id="menu_sesion" name="Sesiones" parent="openacademy_menu" action="sesion_list_action"/>

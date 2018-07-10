@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from datetime import timedelta
 from odoo import models, fields, api, exceptions
 
 class Course(models.Model):
@@ -52,6 +53,7 @@ class Sesion(models.Model):
     asistente_id = fields.Many2many("res.partner", string="Asistente")
 
     asientos_ocupados = fields.Float(string="Asientos ocupados", compute="_asientos_ocupados")
+    fecha_fin = fields.Date(string="Fecha fin", store=True, compute="_get_fecha_fin", inverse="_set_fecha_fin")
 
     @api.depends("seats", "asistente_id")
     def _asientos_ocupados(self):
@@ -77,6 +79,31 @@ class Sesion(models.Model):
                     'message': "Incrementa el número de asientos o reduce el número de asistentes",
                 },
             }
+
+    @api.depends("start_date", "duration")
+    def _get_fecha_fin(self):
+        for r in self:
+            if not (r.start_date and r.duration):
+                r.fecha_fin = r.start_date
+                continue
+
+            # Add duration to start_date, but: Monday + 5 days = Saturday, so
+            # subtract one second to get on Friday instead
+            start = fields.Datetime.from_string(r.start_date)
+            duration = timedelta(days=r.duration, seconds=-1)
+            r.fecha_fin = start + duration
+
+    def _set_fecha_fin(self):
+        for r in self:
+            if not (r.start_date and r.fecha_fin):
+                continue
+
+            # Compute the difference between dates, but: Friday - Monday = 4 days,
+            # so add one day to get 5 days instead
+            start_date = fields.Datetime.from_string(r.start_date)
+            fecha_fin = fields.Datetime.from_string(r.fecha_fin)
+            duration = (fecha_fin - start_date).days + 1
+
 
     @api.constrains("instructor_id", "asistente_id")
     def _check_instructor_not_in_asistente(self):
