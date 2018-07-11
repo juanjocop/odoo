@@ -2,22 +2,11 @@
 
 from odoo import models, fields, api
 
-# class guiaeco(models.Model):
-#     _name = 'guiaeco.guiaeco'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
-
 class guiaecoworld(models.Model):
     _name = 'guiaeco.clientes'
+    _inherits = {'res.partner': 'partner_id'}
 
-    id_cliente = fields.Many2one("res.partner", string="Cliente")
+    partner_id = fields.Many2one('res.partner')
     activo = fields.Boolean()
     especialidad = fields.Char()
     mapaG = fields.Char()
@@ -28,3 +17,6 @@ class guiaecoworld(models.Model):
     calidadValora = fields.Integer()
     imagenPlaca = fields.Binary()
     cabecera = fields.Binary()
+    enlaceWeb = fields.Char()
+    enlaceFacebook = fields.Char()
+    descripcion = fields.Text()
