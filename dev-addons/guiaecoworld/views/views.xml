@@ -5,26 +5,12 @@
     <record id="guiaecoworld_tree_view" model='ir.ui.view'>
       <field name="name">Tree Guia ecoWORLD</field>
       <field name="model">guiaeco.clientes</field>
-      <!-- <field name='inherit_id' ref="base.view_partner_tree" /> -->
       <field name="arch" type="xml">
-        <!-- <field name="active" position="after"> -->
         <tree>
-              <!--<field name="id_cliente" />-->
+              <field name="image_small" widget="image"/>
+              <field name="partner_id"/>
               <field name="activo"/>
-              <field name="especialidad"/>
-              <field name="mapaG"/>
-              <field name="calidadPresentacion"/>
-              <field name="calidadTrato"/>
-              <field name="calidadRecomienda"/>
-              <field name="calidadBeneficios"/>
-              <field name="calidadValora"/>
-              <field name="imagenPlaca"/>
-              <field name="cabecera"/>
-              <field name="enlaceWeb"/>
-              <field name="enlaceFacebook"/>
-              <field name="descripcion"/>
         </tree>
-        <!-- </field> -->
       </field>
     </record>
 
@@ -32,28 +18,33 @@
     <record id="guiaecoworld_form_view" model='ir.ui.view'>
       <field name="name">Form Guia ecoWORLD</field>
       <field name="model">guiaeco.clientes</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="mode">primary</field>
       <field name="arch" type="xml">
-        <form string="Vista Form">
-          <sheet>
-              <field name="id_cliente" />
-              <group>
-                <field name="activo"/>
-                <field name="especialidad"/>
-                <field name="mapaG"/>
-              </group>
-              <group>
-                <field name="calidadPresentacion"/>
-                <field name="calidadTrato"/>
-                <field name="calidadRecomienda"/>
-                <field name="calidadBeneficios"/>
-                <field name="calidadValora"/>
-              </group>
-              <group>
-                <field name="imagenPlaca"/>
-                <field name="cabecera"/>
-              </group>
-          </sheet>
-        </form>
+        <notebook position="inside">
+          <page string="Guia ecoWORLD">
+            <group string="Datos Cliente">
+              <field name="partner_id"/>
+              <field name="activo"/>
+              <field name="especialidad"/>
+              <field name="mapaG"/>
+            </group>
+            <group string="Opinion">
+              <field name="calidadPresentacion"/>
+              <field name="calidadTrato"/>
+              <field name="calidadRecomienda"/>
+              <field name="calidadBeneficios"/>
+              <field name="calidadValora"/>
+            </group>
+            <group string="Imagen Publica">
+              <field name="imagenPlaca"/>
+              <field name="cabecera"/>
+              <field name="enlaceWeb"/>
+              <field name="enlaceFacebook"/>
+              <field name="descripcion"/>
+            </group>
+          </page>
+        </notebook>
       </field>
     </record>
 
