@@ -39,8 +39,6 @@
             <group string="Imagen Publica">
               <field name="imagenPlaca"/>
               <field name="cabecera"/>
-              <field name="enlaceWeb"/>
-              <field name="enlaceFacebook"/>
               <field name="descripcion"/>
             </group>
           </page>
@@ -62,5 +60,23 @@
     <menuitem id="guiaecoworld.clientes" name="Clientes" sequence="1" parent="guiaecoworld.menu_root"/>
     <!-- Action Menu -->
     <menuitem id="guiaecoworld.clientes_lista" name="Clientes" sequence="1" parent="guiaecoworld.clientes" action="guiaecoworld.action_window"/>
+
+    <!--Intentamos añadir al res.partner vista datos adicionales-->
+    <record model="ir.ui.view" id="contactoeco_form_view_inherit">
+      <field name="name">partner.contactoeco</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="website" position="after">
+          <field name="enlaceFacebook"/>
+        </field>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window">
+      <field name="name">Cliente</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
   </data>
 </odoo>

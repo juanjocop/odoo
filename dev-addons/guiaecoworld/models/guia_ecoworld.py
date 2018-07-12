@@ -10,13 +10,17 @@ class guiaecoworld(models.Model):
     activo = fields.Boolean()
     especialidad = fields.Char()
     mapaG = fields.Char()
-    calidadPresentacion = fields.Char()
-    calidadTrato = fields.Char()
-    calidadRecomienda = fields.Boolean()
-    calidadBeneficios = fields.Char()
-    calidadValora = fields.Integer()
-    imagenPlaca = fields.Binary()
-    cabecera = fields.Binary()
-    enlaceWeb = fields.Char()
+    calidadPresentacion = fields.Char(string="Presentación")
+    calidadTrato = fields.Char(string="Trato recibido")
+    calidadRecomienda = fields.Boolean(string="Nos Recomienda?")
+    calidadBeneficios = fields.Char(string="Beneficios")
+    calidadValora = fields.Integer(string="Valoración General")
+    imagenPlaca = fields.Binary(string="Foto con Placa")
+    cabecera = fields.Binary(string="Imagen de cabecera")
+    enlaceFacebook = fields.Char(string="Facebook Link")
+    descripcion = fields.Text(string="Testimonio")
+
+class contactoeco(models.Model):
+    _inherit = 'res.partner'
+
     enlaceFacebook = fields.Char()
-    descripcion = fields.Text()
