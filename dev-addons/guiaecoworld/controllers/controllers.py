@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 
-# class Guiaeco(http.Controller):
-#     @http.route('/guiaeco/guiaeco/', auth='public')
-#     def index(self, **kw):
+class Guiaeco(http.Controller):
+    @http.route('/guiaecoworld', auth='public', website=True)
+    def guiaeco(self, **kw):
+        Clientes = http.request.env['guiaeco.clientes']
+        return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([])})
+
 #         return "Hello, world"
 
 #     @http.route('/guiaeco/guiaeco/objects/', auth='public')

@@ -1,26 +1,27 @@
 <odoo>
     <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
+      <!--CSS para backend guia-->
         <template id="assets_backend" inherit_id="web.assets_backend">
           <xpath expr="." position="inside">
-            <link rel="stylesheet" href="/guiaecoworld/static/src/css/sheet.css"/> 
+            <link rel="stylesheet" href="/guiaecoworld/static/src/css/sheet.css"/>
+          </xpath>
+        </template>
+        <!--guia ecoworld-->
+        <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
+          <section class="guiaeco">
+            <div class="container">
+              <title>Clientes de la guia</title>
+              <h1>Clientes de la guia</h1>
+              <t t-foreach="clientes" t-as="cliente">
+                <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
+              </t>
+            </div>
+          </section>
+        </template>
+        <!--identificarlo como snipet para agregarlo desde modulo website-->
+        <template id="colocar_en_menu" inherit_id="website.snippets" name="Colocar en la pagina">
+          <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="guiaecoworld.guiaecoworld_contenido" t-thumbnail="/guiaecoworld/static/img/thumbGuiaeco.png"/>
           </xpath>
         </template>
     </data>
