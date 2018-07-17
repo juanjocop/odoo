@@ -6,23 +6,54 @@
             <link rel="stylesheet" href="/guiaecoworld/static/src/css/sheet.css"/>
           </xpath>
         </template>
-        <!--guia ecoworld-->
+
         <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
+          <t t-call="website.layout">
+            <t t-set="title">Guía ecoWORLD</t>
+            <div class="oe_structure">
+              <div class="container">
+                <div class="oe_structure" />
+                <t t-foreach="clientes" t-as="cliente">
+                  <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
+                </t>
+                <!-- === Snippets' area === -->
+                <div class="oe_structure" />
+              </div>
+            </div>
+          </t>
+        </template>
+        <!-- Añadir al menu de la pagina la guia ecoworld (por ahora no funciona da un error extraño)-->
+        <!-- <record id="guiaecoworld_link" model="website.menu">
+          <field name="name">Guia ecoWORLD</field>
+          <field name="page_id" ref="guiaecoworld_contenido"/>
+          <field name="parent_id" ref="website.main_menu"/>
+          <field name="sequence" type="int">99</field>
+        </record> -->
+        <!-- mostramos guia ecoworld dentro de la plantilla principal -->
+        <!--<record id="pagina_guiaeco" model="website.page">
+          <field name="name">Guía ecoWORLD</field>
+          <field name="website_published">True</field>
+          <field name="url">/guiaecoworld2</field>
+          <field name="view_id" ref="guiaecoworld_contenido"/>
+        </record>-->
+
+        <!--guia ecoworld-->
+        <!--<template id="guiaecoworld_contenido_snippet" name="Contenido Guía ecoWORLD">
           <section class="guiaeco">
             <div class="container">
-              <title>Clientes de la guia</title>
               <h1>Clientes de la guia</h1>
               <t t-foreach="clientes" t-as="cliente">
                 <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
               </t>
             </div>
           </section>
-        </template>
+        </template>-->
+
         <!--identificarlo como snipet para agregarlo desde modulo website-->
-        <template id="colocar_en_menu" inherit_id="website.snippets" name="Colocar en la pagina">
+        <!--<template id="colocar_en_menu" inherit_id="website.snippets" name="Colocar en la pagina">
           <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
-            <t t-snippet="guiaecoworld.guiaecoworld_contenido" t-thumbnail="/guiaecoworld/static/img/thumbGuiaeco.png"/>
+            <t t-snippet="guiaecoworld.guiaecoworld_contenido_snippet" t-thumbnail="/guiaecoworld/static/img/thumbGuiaeco.png"/>
           </xpath>
-        </template>
+        </template>-->
     </data>
 </odoo>

@@ -6,7 +6,7 @@ class guiaecoworld(models.Model):
     _name = 'guiaeco.clientes'
     _inherits = {'res.partner': 'partner_id'}
 
-    partner_id = fields.Many2one('res.partner')
+    partner_id = fields.Many2one('res.partner', domain=[('is_company', '=', True)])
     activo = fields.Boolean()
     especialidad = fields.Char()
     mapaG = fields.Char()
