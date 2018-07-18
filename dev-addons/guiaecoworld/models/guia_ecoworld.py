@@ -7,8 +7,8 @@ class guiaecoworld(models.Model):
     _inherits = {'res.partner': 'partner_id'}
 
     partner_id = fields.Many2one('res.partner', domain=[('is_company', '=', True)])
-    activo = fields.Boolean()
-    especialidad = fields.Char()
+    activo = fields.Boolean(string="Activado en Guía?")
+    especialidad = fields.Char(string="Especialidad")
     mapaG = fields.Char()
     calidadPresentacion = fields.Char(string="Presentación")
     calidadTrato = fields.Char(string="Trato recibido")
@@ -17,10 +17,10 @@ class guiaecoworld(models.Model):
     calidadValora = fields.Integer(string="Valoración General")
     imagenPlaca = fields.Binary(string="Foto con Placa")
     cabecera = fields.Binary(string="Imagen de cabecera")
-    enlaceFacebook = fields.Char(string="Facebook Link")
-    descripcion = fields.Text(string="Testimonio")
 
 class contactoeco(models.Model):
     _inherit = 'res.partner'
 
-    enlaceFacebook = fields.Char()
+    enlaceFacebook = fields.Char(string="Facebook Link")
+    referido = fields.Many2one('res.partner', string="Referido por")
+    referidos = fields.One2many('res.partner', 'referido', string="Referidos")

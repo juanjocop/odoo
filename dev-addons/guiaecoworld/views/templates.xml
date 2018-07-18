@@ -12,10 +12,12 @@
             <t t-set="title">Guía ecoWORLD</t>
             <div class="oe_structure">
               <div class="container">
+                <!-- === Snippets' area === -->
                 <div class="oe_structure" />
-                <t t-foreach="clientes" t-as="cliente">
+                  <t t-foreach="clientes" t-as="cliente">
+                    <t t-esc="cliente.image" widget="image"/>
                   <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
-                </t>
+                  </t>
                 <!-- === Snippets' area === -->
                 <div class="oe_structure" />
               </div>

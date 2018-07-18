@@ -44,7 +44,6 @@
             <group string="Imagen Publica">
               <field name="imagenPlaca"/>
               <field name="cabecera"/>
-              <field name="descripcion"/>
             </group>
           </page>
         </notebook>
@@ -75,6 +74,26 @@
         <field name="website" position="after">
           <field name="enlaceFacebook"/>
         </field>
+        <field name="parent_id" position="after">
+          <field name="referido" placeholder="Referido por:"/>
+        </field>
+        <notebook>
+          <page string="Referidos">
+            <field name="referidos" mode="kanban"/>
+            <!--<kanban>
+              <templates>
+                <t t-name="kanban-box">
+                  <div class="oe_kanban_vignette">
+                    <img t-att-src="kanban_image('res.partner', 'image_medium', record.id.value)" class="oe_kanban_image"/>
+                    <div class="oe_kanban_details">
+                      <field name="name"/>
+                    </div>
+                  </div>
+                </t>
+              </templates>
+            </kanban>-->
+          </page>
+        </notebook>
       </field>
     </record>
 
