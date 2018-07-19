@@ -15,8 +15,10 @@
                 <!-- === Snippets' area === -->
                 <div class="oe_structure" />
                   <t t-foreach="clientes" t-as="cliente">
-                    <t t-esc="cliente.image" widget="image"/>
-                  <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
+                    <div class="o_field_image o_field_widget oe_avatar">
+                      <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image}}" class="img img-responsive" width="90" height="90"/>
+                    </div>
+                    <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
                   </t>
                 <!-- === Snippets' area === -->
                 <div class="oe_structure" />
