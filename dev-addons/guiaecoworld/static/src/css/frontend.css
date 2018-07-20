@@ -1,0 +1,19 @@
+.container_panel_ficha_cliente{
+  padding: 10px 15px 10px 15px;
+}
+
+
+
+@media (min-width: 1200px) {
+  .img_ficha_cliente{
+    max-width:140px;
+    max-height:140px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .img_ficha_cliente{
+    max-width:90px;
+    max-height:90px;
+  }
+}

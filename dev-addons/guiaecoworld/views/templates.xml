@@ -7,32 +7,63 @@
           </xpath>
         </template>
 
+        <!--CSS para frontend guia-->
+          <template id="assets_frontend" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+              <link rel="stylesheet" href="/guiaecoworld/static/src/css/frontend.css"/>
+            </xpath>
+          </template>
+
         <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
           <t t-call="website.layout">
             <t t-set="title">Guía ecoWORLD</t>
+            <!-- === Snippets' area === -->
+            <div class="oe_structure" />
             <div class="oe_structure">
-              <div class="container">
-                <!-- === Snippets' area === -->
-                <div class="oe_structure" />
+              <div class="container-fluid">
                   <t t-foreach="clientes" t-as="cliente">
-                    <div class="o_field_image o_field_widget oe_avatar">
-                      <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image}}" class="img img-responsive" width="90" height="90"/>
+                    <div class="col col-md-4 col-xs-12 col-lg-3 container_panel_ficha_cliente">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="text-center panel-title">
+                            <t t-esc="cliente.name"/>
+                          </h3>
+                        </div>
+                        <div class="row">
+                          <div class="col col-md-4 col-xs-12">
+                            <div class="o_field_image o_field_widget oe_avatar">
+                              <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image_medium}}" class="img img-responsive img-thumbnail img_ficha_cliente" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-footer">
+                          <p> prueba de footer</p>
+                        </div>
+                      </div>
                     </div>
-                    <p><t t-esc="cliente.id"/> <t t-esc="cliente.name"/></p>
                   </t>
-                <!-- === Snippets' area === -->
-                <div class="oe_structure" />
+                  <!--<kanban>
+                    <field name="partner_id"/>
+                    <field name="image_medium"/>
+                    <field name="name"/>
+                    <templates>
+                      <t t-name="kanban-box">
+                        <div class="oe_kanban_vignette">
+                          <t t-foreach="clientes" t-as="cliente">
+                            <t t-esc="cliente.partner_id"/>
+                            <img t-att-src="kanban_image('guiaeco.clientes', 'image_medium', cliente.partner_id)" class="oe_kanban_image"/>
+                          </t>
+                        </div>
+                      </t>
+                    </templates>
+                  </kanban>-->
               </div>
             </div>
+            <!-- === Snippets' area === -->
+            <div class="oe_structure" />
           </t>
         </template>
-        <!-- Añadir al menu de la pagina la guia ecoworld (por ahora no funciona da un error extraño)-->
-        <!-- <record id="guiaecoworld_link" model="website.menu">
-          <field name="name">Guia ecoWORLD</field>
-          <field name="page_id" ref="guiaecoworld_contenido"/>
-          <field name="parent_id" ref="website.main_menu"/>
-          <field name="sequence" type="int">99</field>
-        </record> -->
+
         <!-- mostramos guia ecoworld dentro de la plantilla principal -->
         <!--<record id="pagina_guiaeco" model="website.page">
           <field name="name">Guía ecoWORLD</field>
@@ -40,6 +71,15 @@
           <field name="url">/guiaecoworld2</field>
           <field name="view_id" ref="guiaecoworld_contenido"/>
         </record>-->
+
+        <!-- Añadir al menu de la pagina la guia ecoworld (por ahora no funciona da un error extraño)-->
+        <record id="guiaecoworld_link" model="website.menu">
+          <field name="name">Guia ecoWORLD</field>
+          <!--<field name="page_id" ref="pagina_guiaeco"/>-->
+          <field name="url">/guiaecoworld</field>
+          <field name="parent_id" ref="website.main_menu"/>
+          <field name="sequence" type="int">99</field>
+        </record>
 
         <!--guia ecoworld-->
         <!--<template id="guiaecoworld_contenido_snippet" name="Contenido Guía ecoWORLD">
