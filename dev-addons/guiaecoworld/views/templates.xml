@@ -35,9 +35,24 @@
                               <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image_medium}}" class="img img-responsive img-thumbnail img_ficha_cliente" />
                             </div>
                           </div>
+                          <div class="col col-md-8 col-xs-12 panel-body">
+                            <div class="row">
+                              <p class="text-center"><t t-esc="cliente.city"/>, <t t-esc="cliente.state_id.name"/></p>
+                            </div>
+                            <div class="row">
+                              <p class="text-center"><t t-esc="cliente.street"/></p>
+                            </div>
+                            <div class="row">
+                              <p class="text-center">
+                                <!--<button class="btn-primary">-->
+                                  <a t-attf-href="/guiaecoworld/{{cliente.partner_id}}" class="btn btn-primary">Ver Ficha</a>
+                                <!--</button>-->
+                              </p>
+                            </div>
+                          </div>
                         </div>
                         <div class="panel-footer">
-                          <p> prueba de footer</p>
+                          <h4 class="text-center">Especialidad: <strong><t t-esc="cliente.especialidad"/></strong></h4>
                         </div>
                       </div>
                     </div>
