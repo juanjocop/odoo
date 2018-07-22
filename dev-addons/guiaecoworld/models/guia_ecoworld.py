@@ -17,6 +17,7 @@ class guiaecoworld(models.Model):
     calidadValora = fields.Integer(string="Valoración General")
     imagenPlaca = fields.Binary(string="Foto con Placa")
     cabecera = fields.Binary(string="Imagen de cabecera")
+    fechaIncorporacion = fields.Date(string="Fecha Incorporación a Guía")
 
 class contactoeco(models.Model):
     _inherit = 'res.partner'

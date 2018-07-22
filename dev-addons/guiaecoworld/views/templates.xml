@@ -14,6 +14,7 @@
             </xpath>
           </template>
 
+        <!-- Guía ecoWORLD inicio -->
         <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
           <t t-call="website.layout">
             <t t-set="title">Guía ecoWORLD</t>
@@ -21,6 +22,10 @@
             <div class="oe_structure" />
             <div class="oe_structure">
               <div class="container-fluid">
+                <div class="row">
+                  <h2 class="text-center">Últimas incorporaciones</h2>
+                </div>
+                <div class="row">
                   <t t-foreach="clientes" t-as="cliente">
                     <div class="col col-md-4 col-xs-12 col-lg-3 container_panel_ficha_cliente">
                       <div class="panel panel-primary">
@@ -45,7 +50,7 @@
                             <div class="row">
                               <p class="text-center">
                                 <!--<button class="btn-primary">-->
-                                  <a t-attf-href="/guiaecoworld/{{cliente.partner_id}}" class="btn btn-primary">Ver Ficha</a>
+                                  <a t-attf-href="/guiaecoworld/{{ slug(cliente) }}" class="btn btn-primary">Ver Ficha</a>
                                 <!--</button>-->
                               </p>
                             </div>
@@ -57,21 +62,7 @@
                       </div>
                     </div>
                   </t>
-                  <!--<kanban>
-                    <field name="partner_id"/>
-                    <field name="image_medium"/>
-                    <field name="name"/>
-                    <templates>
-                      <t t-name="kanban-box">
-                        <div class="oe_kanban_vignette">
-                          <t t-foreach="clientes" t-as="cliente">
-                            <t t-esc="cliente.partner_id"/>
-                            <img t-att-src="kanban_image('guiaeco.clientes', 'image_medium', cliente.partner_id)" class="oe_kanban_image"/>
-                          </t>
-                        </div>
-                      </t>
-                    </templates>
-                  </kanban>-->
+                </div>
               </div>
             </div>
             <!-- === Snippets' area === -->
@@ -87,13 +78,19 @@
           <field name="view_id" ref="guiaecoworld_contenido"/>
         </record>-->
 
-        <!-- Añadir al menu de la pagina la guia ecoworld (por ahora no funciona da un error extraño)-->
+        <!-- Añadir al menu de la pagina la guia ecoworld -->
         <record id="guiaecoworld_link" model="website.menu">
           <field name="name">Guia ecoWORLD</field>
           <!--<field name="page_id" ref="pagina_guiaeco"/>-->
           <field name="url">/guiaecoworld</field>
           <field name="parent_id" ref="website.main_menu"/>
           <field name="sequence" type="int">99</field>
+        </record>
+
+        <record id="guiaecoworld_page" model="website.page">
+          <field name="name">Guía ecoWORLD</field>
+          <field name="url">/guiaecoworld</field>
+          <field name="view_id" ref="guiaecoworld_contenido"/>
         </record>
 
         <!--guia ecoworld-->

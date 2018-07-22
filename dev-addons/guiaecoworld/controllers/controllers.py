@@ -5,9 +5,7 @@ class Guiaeco(http.Controller):
     @http.route('/guiaecoworld', auth='public', website=True)
     def guiaeco(self, **kw):
         Clientes = http.request.env['guiaeco.clientes']
-        return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([('activo', '=', True)], limit=4)})
-
-#         return "Hello, world"
+        return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([('activo', '=', True)], limit=4, order="fechaIncorporacion desc")})
 
 #     @http.route('/guiaeco/guiaeco/objects/', auth='public')
 #     def list(self, **kw):
