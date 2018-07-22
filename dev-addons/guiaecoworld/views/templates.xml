@@ -13,6 +13,14 @@
               <link rel="stylesheet" href="/guiaecoworld/static/src/css/frontend.css"/>
             </xpath>
           </template>
+          <!-- CSS y JS para input de busqueda de la guia -->
+          <template id="assets_frontend_inherit" inherit_id="web.assets_frontend" name="Guia">
+              <xpath expr="." position="inside">
+                  <link rel="stylesheet" href="/guiaecoworld/static/src/css/search.css"/>
+                  <script type="text/javascript" src="/guiaecoworld/static/src/js/lib.js"></script>
+                  <script type="text/javascript" src="/guiaecoworld/static/src/js/custom_search.js"></script>
+              </xpath>
+          </template>
 
         <!-- Guía ecoWORLD inicio -->
         <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
@@ -20,6 +28,20 @@
             <t t-set="title">Guía ecoWORLD</t>
             <!-- === Snippets' area === -->
             <div class="oe_structure" />
+            <div class="oe_structure">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col col-md-6 col-xs12 search-frontend">
+                    <div class="input-group text-center" style="width:100%">
+                      <label for="search_autocomplete" class="text-info"><strong>Filtrar por provincia: </strong></label>
+                      <!--<div class="oe_search" style="display:inline-block;">-->
+                        <input id='search_autocomplete' type="text" name="search" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search"/>
+                      <!--</div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
