@@ -7,12 +7,12 @@ class Guiaeco(http.Controller):
         Clientes = http.request.env['guiaeco.clientes']
         return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([('activo', '=', True)], limit=4, order="fechaIncorporacion desc")})
 
-    @http.route('/guiaecoworld/<int:provincia>', auth='public', website=True)
+    @http.route('/guiaecoworld/provincia/<int:provincia>', auth='public', website=True)
     def guiaecoprovincia(self, provincia, search, **kw):
         Clientes = http.request.env['guiaeco.clientes']
         return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([('activo', '=', True), ('state_id', '=', provincia)], limit=4, order="fechaIncorporacion desc")})
 
-    @http.route('/guiaecoworld/<int:localidad>', auth='public', website=True)
+    @http.route('/guiaecoworld/localidad/<int:localidad>', auth='public', website=True)
     def guiaecolocalidad(self, localidad, search, **kw):
         Clientes = http.request.env['guiaeco.clientes']
         return http.request.render('guiaecoworld.guiaecoworld_contenido', {'clientes': Clientes.search([('activo', '=', True), ('city', '=', search)], limit=4, order="fechaIncorporacion desc")})
