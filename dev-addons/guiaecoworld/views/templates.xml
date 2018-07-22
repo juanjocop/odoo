@@ -33,10 +33,14 @@
                 <div class="row">
                   <div class="col col-md-6 col-xs12 search-frontend">
                     <div class="input-group text-center" style="width:100%">
-                      <label for="search_autocomplete" class="text-info"><strong>Filtrar por provincia: </strong></label>
-                      <!--<div class="oe_search" style="display:inline-block;">-->
-                        <input id='search_autocomplete' type="text" name="search" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search"/>
-                      <!--</div>-->
+                      <label for="search_autocomplete_provincia" class="text-info"><strong>Filtrar por provincia: </strong></label>
+                      <input id='search_autocomplete_provincia' type="text" name="search_provincia" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search_provincia"/>
+                    </div>
+                  </div>
+                  <div class="col col-md-6 col-xs12 search-frontend">
+                    <div class="input-group text-center" style="width:100%">
+                      <label for="search_autocomplete_localidad" class="text-info"><strong>Filtrar por Localidad: </strong></label>
+                        <input id='search_autocomplete_localidad' type="text" name="search_localidad" class="search-query oe_search_box" placeholder="Buscar por localidad" t-att-value="search_localidad"/>
                     </div>
                   </div>
                 </div>
@@ -45,7 +49,7 @@
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
-                  <h2 class="text-center">Últimas incorporaciones</h2>
+                  <h2 class="text-center">Últimas incorporaciones<t t-if="provincia" t-esc="provincia" />:</h2>
                 </div>
                 <div class="row">
                   <t t-foreach="clientes" t-as="cliente">
