@@ -6,6 +6,19 @@ div.search-frontend{
   padding: 10px 0px 10px 0px;
 }
 
+.google-maps {
+        position: relative;
+        /*padding-bottom: 75%; // This is the aspect ratio*/
+        /*height: 0;*/
+        overflow: hidden;
+    }
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+}
+
 
 
 @media (min-width: 1200px) {
@@ -13,11 +26,20 @@ div.search-frontend{
     max-width:140px;
     max-height:140px;
   }
+
+  .google-maps, .google-maps iframe{
+    height: 700px !important;
+  }
 }
 
-@media (min-width: 992px) and (max-width: 1199px){
+@media /*(min-width: 992px) and */(max-width: 1199px){
   .img_ficha_cliente{
     max-width:90px;
     max-height:90px;
   }
+
+  .google-maps, .google-maps iframe{
+    height: 400px !important;
+  }
+
 }

@@ -31,7 +31,7 @@
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col col-md-6 col-xs12 search-frontend">
+                  <div class="col col-md-6 col-xs-12 search-frontend">
                     <div class="input-group text-center" style="width:100%">
                       <label for="search_autocomplete_provincia" class="text-info"><strong>Filtrar por provincia: </strong></label>
                       <input id='search_autocomplete_provincia' type="text" name="search_provincia" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search_provincia"/>
@@ -49,7 +49,8 @@
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
-                  <h2 class="text-center">Últimas incorporaciones<t t-if="provincia" t-esc="provincia" />:</h2>
+                  <h2 t-if="provincia" class="text-center">Últimas incorporaciones de <strong><t t-esc="provincia" /></strong>:</h2>
+                  <h2 t-else="" class="text-center">Últimas incorporaciones:</h2>
                 </div>
                 <div class="row">
                   <t t-foreach="clientes" t-as="cliente">
@@ -61,7 +62,7 @@
                           </h3>
                         </div>
                         <div class="row">
-                          <div class="col col-md-4 col-xs-12">
+                          <div class="col col-md-4 col-xs-12 text-center">
                             <div class="o_field_image o_field_widget oe_avatar">
                               <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.image_medium}}" class="img img-responsive img-thumbnail img_ficha_cliente" />
                             </div>
@@ -88,6 +89,11 @@
                       </div>
                     </div>
                   </t>
+                </div>
+                <div class="row">
+                  <div class="col col-md-6 col-xs-12 google-maps">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1NJz5zWQ_w4LqEzGUQm_Vmc5My6FLEoYn" width="640" height="480"></iframe>
+                  </div>
                 </div>
               </div>
             </div>
