@@ -7,9 +7,17 @@ odoo.define("website_search_autocomplete.custom_search", function (require) {
    var core = require('web.core');
    var config = require('web.config');
    require("website.content.zoomodoo");
-   
-    $('#search_autocomplete').devbridgeAutocomplete({
+
+    $('#search_autocomplete_provincia').devbridgeAutocomplete({
         serviceUrl: '/guiaecoworld/get_suggest',
+        onSelect: function (suggestion) {
+             window.location.replace(window.location.origin +
+                '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value);
+        }
+    });
+
+    $('#search_autocomplete_localidad').devbridgeAutocomplete({
+        serviceUrl: '/guiaecoworld/get_localidad',
         onSelect: function (suggestion) {
              window.location.replace(window.location.origin +
                 '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value);
