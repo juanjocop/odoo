@@ -5,7 +5,7 @@ from odoo import http, tools, _
 from odoo.http import request
 
 
-class WebsiteSearchGuia(http.Controller):
+class WebsiteSearchProvincia(http.Controller):
     @http.route(['/guiaecoworld/get_suggest'], type='http', auth="public", methods=['GET'], website=True)
     def get_suggest_json(self, **kw):
         query = kw.get('query')
@@ -22,6 +22,8 @@ class WebsiteSearchGuia(http.Controller):
             'suggestions': results
         })
 
+
+class WebsiteSearchLocalidad(http.Controller):
     @http.route(['/guiaecoworld/get_localidad'], type='http', auth="public", methods=['GET'], website=True)
     def get_suggest_json(self, **kw):
         query = kw.get('query')

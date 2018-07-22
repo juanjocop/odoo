@@ -34,7 +34,7 @@
                   <div class="col col-md-6 col-xs12 search-frontend">
                     <div class="input-group text-center" style="width:100%">
                       <label for="search_autocomplete_provincia" class="text-info"><strong>Filtrar por provincia: </strong></label>
-                        <input id='search_autocomplete_provincia' type="text" name="search_provincia" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search_provincia"/>
+                      <input id='search_autocomplete_provincia' type="text" name="search_provincia" class="search-query oe_search_box" placeholder="Buscar por provincia" t-att-value="search_provincia"/>
                     </div>
                   </div>
                   <div class="col col-md-6 col-xs12 search-frontend">
