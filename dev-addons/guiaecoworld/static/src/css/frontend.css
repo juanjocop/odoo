@@ -1,3 +1,103 @@
+/* Webfont: BloggerSans-Medium */
+@font-face {
+    font-family: 'BloggerSansMedium';
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Medium.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans-Medium.svg#BloggerSans-Medium') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BloggerSans-MediumItalic */
+@font-face {
+    font-family: 'BloggerSansMedium';
+    src: url('/guiaecoworld/static/src/font/BloggerSans-MediumItalic.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans-MediumItalic.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans-MediumItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans-MediumItalic.svg#BloggerSans-MediumItalic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BloggerSans-Bold */
+@font-face {
+    font-family: 'BloggerSans';
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Bold.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans-Bold.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans-Bold.svg#BloggerSans-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BloggerSans-BoldItalic */
+@font-face {
+    font-family: 'BloggerSans';
+    src: url('/guiaecoworld/static/src/font/BloggerSans-BoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans-BoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans-BoldItalic.svg#BloggerSans-BoldItalic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BloggerSans-Italic */
+@font-face {
+    font-family: 'BloggerSans';
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Italic.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans-Italic.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans-Italic.svg#BloggerSans-Italic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: BloggerSans */
+@font-face {
+    font-family: 'BloggerSans';
+    src: url('/guiaecoworld/static/src/font/BloggerSans.eot'); /* IE9 Compat Modes */
+    src: url('/guiaecoworld/static/src/font/BloggerSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/guiaecoworld/static/src/font/BloggerSans.woff') format('woff'), /* Modern Browsers */
+         url('/guiaecoworld/static/src/font/BloggerSans.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/guiaecoworld/static/src/font/BloggerSans.svg#BloggerSans') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/*@@font-face {
+  font-family: 'FrankfurtenSB-Medium';
+  src: url('/guiaecoworld/static/src/font/FrankfurtenSB-Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}*/
+
+
+
+/*--------------------------------------------*/
+
+/*estilo para toda la pagina*/
+div#wrapwrap{
+  font-family: BloggerSansMedium !important;
+}
+
+/*div#wrapwrap span.ecoworld{
+  font-family: FrankfurtenSB-Medium !important;
+}*/
+
+/*estilos guia principal*/
 .container_panel_ficha_cliente{
   padding: 10px 15px 10px 15px;
 }
@@ -19,7 +119,54 @@ div.search-frontend{
     width: 100% !important;
 }
 
+.img_cabecera_cliente{
+  width:100%;
+}
 
+/*---------------*/
+
+/*estilos ficha cliente*/
+ul.contact-list-ficha{
+  list-style: none;
+}
+
+div.map-ficha{
+  margin-top: 10px;
+}
+
+div.container-ficha-cliente div.datos-contacto{
+  padding: 15px 15px 15px 15px;
+  background-color: #3399cc;
+  color: white;
+}
+
+div.container-ficha-cliente div.datos-contacto a{
+  color: white;
+}
+
+div.container-ficha-cliente div.datos-contacto li{
+  margin: 10px 0px 10px 0px;
+}
+
+div.container-ficha-cliente div.homenaje-ficha{
+  padding: 1.5em;
+  border: solid 1px #000000;
+  margin-top: 15px;
+}
+
+div.container-ficha-cliente p, div.container-ficha-cliente ul{
+  font-size: 18px;
+}
+
+div.container-ficha-cliente div.homenaje-ficha p{
+  text-align: justify;
+}
+
+div.container-ficha-cliente h3#especialidad{
+  font-size: 42px;
+}
+
+/*--------*/
 
 @media (min-width: 1200px) {
   .img_ficha_cliente{

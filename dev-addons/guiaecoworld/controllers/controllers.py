@@ -24,12 +24,10 @@ class Guiaeco(http.Controller):
                 'localidad': search,
                 'clientes': Clientes.search([('activo', '=', True), ('city', '=', search)], limit=100, order="name")})
 
-#    @http.route('/guiaecoworld/localidad/<int:localidad>', auth='public', website=True)
-#    def guiaecolocalidad(self, localidad, search, type, **kw):
-#        Clientes = http.request.env['guiaeco.clientes']
-#        return http.request.render('guiaecoworld.guiaecoworld_contenido',
-#        {'clientes4': Clientes.search([('activo', '=', True), ('city', '=', search)], limit=4, order="fechaIncorporacion desc"),
-#        'localidad': search})
+    @http.route('/guiaecoworld/<model("guiaeco.clientes"):cliente>/', auth="public", website=True)
+    def guiaecocliente(self, cliente, **kw):
+        return http.request.render('guiaecoworld.ficha_cliente_guia', {'cliente': cliente})
+
 
 #     @http.route('/guiaeco/guiaeco/objects/', auth='public')
 #     def list(self, **kw):

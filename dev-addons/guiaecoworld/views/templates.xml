@@ -140,6 +140,80 @@
           </t>
         </template>
 
+        <!-- ficha cliente -->
+        <template id="ficha_cliente_guia" name="Ficha Cliente">
+          <t t-call="website.layout">
+            <t t-set="title">Guía ecoWORLD: <t t-esc="cliente.name"/></t>
+            <!-- === Snippets' area === -->
+            <div class="oe_structure" />
+            <div class="oe_structure">
+              <div class="container container-ficha-cliente">
+                <div class="row">
+                    <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.cabecera}}" class="img img-responsive img_cabecera_cliente" />
+                </div>
+                <div class="row text-center">
+                  <h3 id="especialidad"><span class="glyphicon glyphicon-chevron-right"></span>Especialistas en <t t-esc="cliente.especialidad"/><span class="glyphicon glyphicon-chevron-left"></span></h3>
+                </div>
+                <div class="row">
+                  <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.imagenPlaca}}" class="img img-responsive" />
+                  </div>
+                  <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="row datos-contacto">
+                      <address>
+                        <h2><t t-esc="cliente.name"/></h2>
+                        <ul class="contact-list-ficha">
+                          <li t-if="cliente.street">
+                            <a t-attf-href="{{cliente.mapaG}}" target="_blank">
+                              <span class="glyphicon glyphicon-map-marker"></span> <t t-esc="cliente.street"/>, <t t-esc="cliente.zip"/> <t t-esc="cliente.city"/>, <t t-esc="cliente.state_id.name"/>
+                            </a>
+                          </li>
+                          <li t-if="cliente.mobile">
+                            <a t-attf-href="tel:{{cliente.mobile}}"><span class="glyphicon glyphicon-earphone"></span> <t t-esc="cliente.mobile"/></a>
+                          </li>
+                          <li t-if="cliente.email">
+                            <a t-attf-href="mailto:{{cliente.email}}"><span class="glyphicon glyphicon-envelope"></span> <t t-esc="cliente.email"/></a>
+                          </li>
+                          <li>
+                            <a t-attf-href="{{cliente.website}}" target="_blank"><span class="glyphicon glyphicon-link"></span> <t t-esc="cliente.website"/></a>
+                          </li>
+                          <li t-if="cliente.enlaceFacebook">
+                            <a t-attf-href="cliente.enlaceFacebook" target="_blank"><i class="fa fa-facebook-square"></i> <t t-esc="cliente.enlaceFacebook"/></a>
+                          </li>
+                        </ul>
+                      </address>
+                    </div>
+                    <div class="row homenaje-ficha">
+                      <p><strong>
+                          <a t-if="cliente.website" t-attf-href="{{cliente.website}}" target="_blank"><t t-esc="cliente.name"/></a>
+                          <a t-elif="cliente.enlaceFacebook" t-attf-href="{{cliente.enlaceFacebook}}" target="_blank"><t t-esc="cliente.name"/></a>
+                        </strong> ya pertenece a la guía de establecimientos ecológicos, la <strong><a href="/guia-ecoworld/">Guía ecoWORLD</a></strong>,
+                        y también le ha sido otorgada la cualificación ecoFRIENDLY gracias a la incorporación del <strong><a>Sistema eOZONE</a></strong> en su establecimiento,
+                        alcanzando un gran poder de desinfección y desbacterización de forma totalmente ecológica permitiendo así limpiar sin usar productos químicos tóxicos
+                        todo su establecimiento y sus alimentos, ofreciendo un extra de calidad a sus clientes y empleados, y dejando de contaminar el medio ambiente.
+                      </p>
+                      <p>
+                        Damos la bienvenida a
+                        <strong>
+                          <a t-if="cliente.website" t-attf-href="{{cliente.website}}" target="_blank"><t t-esc="cliente.name"/></a>
+                          <a t-elif="cliente.enlaceFacebook" t-attf-href="{{cliente.enlaceFacebook}}" target="_blank"><t t-esc="cliente.name"/></a>
+                        </strong> a la <strong><a href="/guia-ecoworld/">Guía ecoWORLD</a></strong> y aplaudimos su conciencia ecológica hacia el mundo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row google-maps map-ficha">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.7471606509466!2d-3.5214212847114625!3d36.75263957995839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xefda65384884d8ad!2sBar+El+Paso!5e0!3m2!1ses!2ses!4v1532368634808" width="600" height="400" frameborder="0" style="border:0"></iframe>
+                </div>
+                <div class="row">
+                  <p class="text-center">Con <span class="ecoworld">ecoWORLD</span> <strong>Ganas Tú, Ganamos Nosotros, Gana El Planeta</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="oe_structure" />
+          </t>
+        </template>
+
         <!-- mostramos guia ecoworld dentro de la plantilla principal -->
         <!--<record id="pagina_guiaeco" model="website.page">
           <field name="name">Guía ecoWORLD</field>
