@@ -12,7 +12,7 @@ odoo.define("website_search_autocomplete.custom_search", function (require) {
         serviceUrl: '/guiaecoworld/get_suggest',
         onSelect: function (suggestion) {
              window.location.replace(window.location.origin +
-                '/guiaecoworld/provincia/' + suggestion.data.id + '?search=' + suggestion.value);
+                '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value + '&type=provincia');
         }
     });
 
@@ -20,7 +20,7 @@ odoo.define("website_search_autocomplete.custom_search", function (require) {
         serviceUrl: '/guiaecoworld/get_localidad',
         onSelect: function (suggestion) {
              window.location.replace(window.location.origin +
-                '/guiaecoworld/localidad/' + suggestion.data.id + '?search=' + suggestion.value);
+                '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value + '&type=localidad');
         }
     });
 });

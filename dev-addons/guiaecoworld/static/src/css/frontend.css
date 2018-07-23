@@ -28,7 +28,7 @@ div.search-frontend{
   }
 
   .google-maps, .google-maps iframe{
-    height: 700px !important;
+    height: 450px !important;
   }
 }
 
@@ -39,7 +39,7 @@ div.search-frontend{
   }
 
   .google-maps, .google-maps iframe{
-    height: 400px !important;
+    height: 350px !important;
   }
 
 }
