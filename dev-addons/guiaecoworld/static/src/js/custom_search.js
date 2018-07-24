@@ -20,7 +20,7 @@ odoo.define("website_search_autocomplete.custom_search", function (require) {
         serviceUrl: '/guiaecoworld/get_localidad',
         onSelect: function (suggestion) {
              window.location.replace(window.location.origin +
-                '/guiaecoworld/' + suggestion.data.id + '?search=' + suggestion.value + '&type=localidad');
+                '/guiaecoworld/' + '77' + '?search=' + suggestion.value + '&type=localidad');
         }
     });
 });

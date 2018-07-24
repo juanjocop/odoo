@@ -4,6 +4,16 @@ from difflib import SequenceMatcher
 from odoo import http, tools, _
 from odoo.http import request
 
+def remove_duplicates(values):
+    output = []
+    seen = set()
+    for value in values:
+        # If value has not been encountered yet,
+        # ... add it to both list and set.
+        if value not in seen:
+            output.append(value)
+            seen.add(value)
+    return output
 
 class WebsiteSearchProvincia(http.Controller):
     @http.route(['/guiaecoworld/get_suggest'], type='http', auth="public", methods=['GET'], website=True)
@@ -32,9 +42,13 @@ class WebsiteSearchLocalidad(http.Controller):
         clientes = request.env['guiaeco.clientes'].search(domain)
         clientes = sorted(clientes, key=lambda x: SequenceMatcher(None, query.lower(), x.name.lower()).ratio(),
                           reverse=True)
-        results = []
+        citys = []
         for cliente in clientes:
-            results.append({'value': cliente.city, 'data': {'id': cliente.id, 'after_selected': cliente.city}})
+            citys.append(cliente.city)
+        clientesSinDuplicados = remove_duplicates(citys)
+        results = []
+        for city in clientesSinDuplicados:
+            results.append({'value': city, 'data': {'id': city, 'after_selected': city}})
         return json.dumps({
             'query': 'Unit',
             'suggestions': results
