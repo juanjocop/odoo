@@ -33,6 +33,7 @@
               <field name="activo"/>
               <field name="especialidad"/>
               <field name="mapaG"/>
+              <field name="mapaEmbed"/>
               <field name="fechaIncorporacion"/>
             </group>
             <group string="Opinion">
