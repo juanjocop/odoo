@@ -28,7 +28,11 @@ class Guiaeco(http.Controller):
     def guiaecocliente(self, cliente, **kw):
         return http.request.render('guiaecoworld.ficha_cliente_guia', {'cliente': cliente})
 
-
+    @http.route('/testimonios', auth='public', website=True)
+    def testimonios(self, **kw):
+        Testimonios = http.request.env['guiaeco.testimonios']
+        return http.request.render('guiaecoworld.guia_testimonios',
+        {'testimonios': Testimonios.search([('activo', '=', True)], limit=100, order="create_date desc")})
 #     @http.route('/guiaeco/guiaeco/objects/', auth='public')
 #     def list(self, **kw):
 #         return http.request.render('guiaeco.listing', {
