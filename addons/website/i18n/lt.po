@@ -2107,6 +2107,8 @@ msgid ""
 "If this field is empty, the view applies to all users. Otherwise, the view "
 "applies to the users of those groups only."
 msgstr ""
+"Jei šis laukas tuščias, vaizdas pritaikomas visiems vartotojams. Kitu "
+"atveju, vaizdas pritaikomas tik tų grupių vartotojams."
 
 #. module: website
 #: model:ir.model.fields,help:website.field_website_page_active
@@ -3124,7 +3126,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.menu,name:website.menu_website_redirect_list
 msgid "Redirects"
-msgstr ""
+msgstr "Nukreipimai"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
