@@ -174,7 +174,7 @@
                           <li t-if="cliente.email">
                             <a t-attf-href="mailto:{{cliente.email}}"><span class="glyphicon glyphicon-envelope"></span> <t t-esc="cliente.email"/></a>
                           </li>
-                          <li>
+                          <li t-if="cliente.website">
                             <a t-attf-href="{{cliente.website}}" target="_blank"><span class="glyphicon glyphicon-link"></span> <t t-esc="cliente.website"/></a>
                           </li>
                           <li t-if="cliente.enlaceFacebook">
