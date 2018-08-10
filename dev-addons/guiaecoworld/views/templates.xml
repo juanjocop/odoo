@@ -171,6 +171,9 @@
                           <li t-if="cliente.mobile">
                             <a t-attf-href="tel:{{cliente.mobile}}"><span class="glyphicon glyphicon-earphone"></span> <t t-esc="cliente.mobile"/></a>
                           </li>
+                          <li t-if="cliente.phone">
+                            <a t-attf-href="tel:{{cliente.phone}}"><span class="glyphicon glyphicon-phone-alt"></span> <t t-esc="cliente.phone"/></a>
+                          </li>
                           <li t-if="cliente.email">
                             <a t-attf-href="mailto:{{cliente.email}}"><span class="glyphicon glyphicon-envelope"></span> <t t-esc="cliente.email"/></a>
                           </li>
