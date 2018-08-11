@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Guia ecoWORLD",
+    'name': "ecoworld",
 
     'summary': """
-        Desarrollo de la Guia ecoWORLD""",
+        Personalización odoo para ecoWORLD""",
 
     'description': """
-        Descripción Larga de la guiaaaa
+        Con este modulo adaptamos odoo a las necesidades de ecoWORLD
     """,
 
     'author': "ecoWORLD",
-    'website': "https://www.eco-world.es",
+    'website': "http://www.eco-world.es",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website'],
+    'depends': ['base'],
 
     # always loaded
     'data': [

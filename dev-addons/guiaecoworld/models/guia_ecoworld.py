@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError, ValidationError
 
 class guiaecoworld(models.Model):
     _name = 'guiaeco.clientes'
@@ -14,10 +15,3 @@ class guiaecoworld(models.Model):
     imagenPlaca = fields.Binary(string="Foto con Placa")
     cabecera = fields.Binary(string="Imagen de cabecera")
     fechaIncorporacion = fields.Date(string="Fecha Incorporación a Guía", required=True)
-
-class contactoeco(models.Model):
-    _inherit = 'res.partner'
-
-    enlaceFacebook = fields.Char(string="Facebook Link")
-    referido = fields.Many2one('res.partner', string="Referido por")
-    referidos = fields.One2many('res.partner', 'referido', string="Referidos")

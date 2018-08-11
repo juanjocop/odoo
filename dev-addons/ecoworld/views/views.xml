@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <!--Intentamos añadir al res.partner vista datos adicionales-->
+    <record model="ir.ui.view" id="contactoeco_form_view_inherit">
+      <field name="name">partner.contactoeco</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="website" position="after">
+          <field name="enlaceFacebook"/>
+        </field>
+        <field name="parent_id" position="after">
+          <field name="referido" placeholder="Referido por:"/>
+        </field>
+        <field name="vat" position="after">
+          <field name="cifnif" placeholder="NIF/CIF:"/>
+        </field>
+        <field name="vat" position="replace">
+          <field name="vat" attrs="{'invisible': True}"/>
+        </field>
+        <notebook>
+          <page string="Referidos">
+            <field name="referidos" mode="kanban"/>
+            <!--<kanban>
+              <templates>
+                <t t-name="kanban-box">
+                  <div class="oe_kanban_vignette">
+                    <img t-att-src="kanban_image('res.partner', 'image_medium', record.id.value)" class="oe_kanban_image"/>
+                    <div class="oe_kanban_details">
+                      <field name="name"/>
+                    </div>
+                  </div>
+                </t>
+              </templates>
+            </kanban>-->
+          </page>
+        </notebook>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window">
+      <field name="name">Cliente</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>
