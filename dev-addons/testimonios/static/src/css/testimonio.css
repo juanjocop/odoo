@@ -1,0 +1,48 @@
+/*estilos testimonios*/
+div#testimonio-container div.panel-heading h3{
+  font-size: 25px;
+}
+
+div#testimonio-container div.panel-body h3{
+  /*font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;*/
+}
+
+div#testimonio-container div.row-progressbar{
+  padding: 0px 10px 0px 10px;
+}
+
+div#testimonio-container div.row-progressbar div.progress span{
+  font-size: 15px;
+}
+
+div#testimonio-container div.row-recomienda p{
+  color: #006633;
+  font-size: 20px;
+}
+
+div#testimonio-container div.row-recomienda p span{
+  font-size: 20px;
+}
+div#testimonio-container div.row-testimonio p{
+  padding: 10px 10px 0px 10px;
+}
+
+div#testimonio-container div.panel-body p{
+  font-size: 16px;
+}
+
+@media (min-width: 1200px) {
+  .img_testimonio{
+    max-width:140px;
+    max-height:140px;
+  }
+}
+
+@media /*(min-width: 992px) and */(max-width: 1199px){
+  .img_testimonio{
+    max-width:90px;
+    max-height:90px;
+  }
+}

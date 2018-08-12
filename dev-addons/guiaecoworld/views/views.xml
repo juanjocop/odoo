@@ -45,50 +45,6 @@
       </field>
     </record>
 
-    <!--Testimonios-->
-    <!-- Tree Definition -->
-    <record id="testimonio_tree_view" model='ir.ui.view'>
-      <field name="name">Tree Testimonios</field>
-      <field name="model">guiaeco.testimonios</field>
-      <field name="arch" type="xml">
-        <tree>
-              <field name="image_small" widget="image"/>
-              <field name="partner_id"/>
-              <field name="activo"/>
-        </tree>
-      </field>
-    </record>
-
-    <!-- Form Definition -->
-    <record id="testimonios_form_view" model='ir.ui.view'>
-      <field name="name">Form Testimonios</field>
-      <field name="model">guiaeco.testimonios</field>
-      <field name="inherit_id" ref="base.view_partner_form"/>
-      <field name="mode">primary</field>
-      <field name="arch" type="xml">
-        <field name="company_type" position="after">
-          <field name="partner_id" placeholder="Elije cliente guia" required="True"/>
-        </field>
-        <notebook position="inside">
-          <page string="Testimonio">
-            <group string="Activar">
-              <field name="activo"/>
-            </group>
-            <group string="Opinion">
-              <field name="calidadPresentacion" widget="selection"/>
-              <field name="calidadTrato" widget="selection"/>
-              <field name="calidadRecomienda"/>
-              <field name="calidadBeneficios"/>
-              <field name="calidadValora"/>
-            </group>
-            <group>
-              <field name="testimonio"/>
-            </group>
-          </page>
-        </notebook>
-      </field>
-    </record>
-
     <!-- Action clientes -->
     <record id="guiaecoworld.action_window" model="ir.actions.act_window">
       <field name="name">Clientes</field>
@@ -96,23 +52,11 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Action clientes testimonios -->
-    <record id="testimonio_action_window" model="ir.actions.act_window">
-      <field name="name">Testimonios</field>
-      <field name="res_model">guiaeco.testimonios</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <!-- Menus -->
-    <!-- Top Menu -->
-    <menuitem id="guiaecoworld.menu_root" name="Guía ecoWORLD" sequence="1"/>
     <!-- Menu Categorias -->
-    <menuitem id="guiaecoworld.clientes" name="Clientes" sequence="1" parent="guiaecoworld.menu_root"/>
+    <menuitem id="guiaecoworld.clientes" name="Guía ecoWORLD" sequence="1" parent="ecoworld.menu_root"/>
     <!-- Action Menu -->
     <menuitem id="guiaecoworld.clientes_lista_guia" name="Clientes" sequence="1" parent="guiaecoworld.clientes" action="guiaecoworld.action_window"/>
-    <!-- Action Menu testimonio-->
-    <menuitem id="guiaecoworld.clientes_lista_testimonio" name="Testimonios" sequence="2" parent="guiaecoworld.clientes" action="testimonio_action_window"/>
 
-    
+
   </data>
 </odoo>

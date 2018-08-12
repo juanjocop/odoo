@@ -220,86 +220,6 @@
           </t>
         </template>
 
-        <!-- Testimonios escritos -->
-        <template id="guia_testimonios" name="Testimonios">
-          <t t-call="website.layout">
-            <t t-set="title">Testimonios</t>
-            <!-- === Snippets' area === -->
-            <div class="oe_structure" />
-            <div class="oe_structure">
-              <div id="testimonio-container" class="container-fluid">
-                <div class="row text-center">
-                  <h2>Testimonios:</h2>
-                </div>
-                <div class="row">
-                  <t t-foreach="testimonios" t-as="testimonio">
-                    <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                      <div class="panel panel-primary">
-                        <div class="panel-heading">
-                          <h3 class="text-center panel-title"><t t-esc="testimonio.parent_id.name"/></h3>
-                        </div>
-                        <div class="panel-body">
-                          <div class="row">
-                            <div class="col col-md-4 col-xs-12">
-                              <div class="o_field_image o_field_widget oe_avatar">
-                                <img t-if="testimonio.image" t-attf-src="data:image/png;base64, {{testimonio.image_medium}}" class="img img-responsive" />
-                              </div>
-                            </div>
-                            <div class="col col-md-8 col-xs-12">
-                              <h3><t t-esc="testimonio.name"/></h3>
-                              <p><t t-esc="testimonio.function"/></p>
-                            </div>
-                          </div>
-                          <div class="row row-testimonio">
-                            <p><t t-esc="testimonio.testimonio" /></p>
-                          </div>
-                        </div>
-                        <div class="panel-footer">
-                          <div class="row row-progressbar">
-                            <div class="progress progress-striped">
-                              <div t-if="testimonio.calidadPresentacion == 1" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="70" style="width: 70%">
-                                <span>Presentación</span>
-                              </div>
-                              <div t-if="testimonio.calidadPresentacion == 2" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="85" style="width: 85%">
-                                <span>Presentación</span>
-                              </div>
-                              <div t-if="testimonio.calidadPresentacion == 3" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                <span>Presentación</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row row-progressbar">
-                            <div class="progress progress-striped">
-                              <div t-if="testimonio.calidadTrato == 1" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="70" style="width: 70%">
-                                <span>Trato recibido</span>
-                              </div>
-                              <div t-if="testimonio.calidadTrato == 2" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="85" style="width: 85%">
-                                <span>Trato recibido</span>
-                              </div>
-                              <div t-if="testimonio.calidadTrato == 3" class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                <span>Trato recibido</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row row-recomienda text-center" t-if="testimonio.calidadRecomienda">
-                            <p><span class="glyphicon glyphicon-ok-circle"></span> Recomiendo ecoWORLD</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </t>
-                </div>
-              </div>
-            </div>
-          </t>
-        </template>
-
         <!-- mostramos guia ecoworld dentro de la plantilla principal -->
         <!--<record id="pagina_guiaeco" model="website.page">
           <field name="name">Guía ecoWORLD</field>
@@ -321,20 +241,6 @@
           <field name="name">Guía ecoWORLD</field>
           <field name="url">/guiaecoworld</field>
           <field name="view_id" ref="guiaecoworld_contenido"/>
-        </record>
-
-        <!-- añadir al menu la pagina testimonios -->
-        <record id="testimonios_link" model="website.menu">
-          <field name="name">Testimonios</field>
-          <field name="url">/testimonios</field>
-          <field name="parent_id" ref="website.main_menu"/>
-          <field name="sequence" type="int">99</field>
-        </record>
-
-        <record id="testimonios_page" model="website.page">
-          <field name="name">Testimonios</field>
-          <field name="url">/testimonios</field>
-          <field name="view_id" ref="guia_testimonios"/>
         </record>
 
         <!--guia ecoworld-->

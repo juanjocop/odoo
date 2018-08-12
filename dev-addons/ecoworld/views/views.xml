@@ -43,5 +43,10 @@
       <field name="res_model">res.partner</field>
       <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- Menus -->
+    <!-- Top Menu -->
+    <menuitem id="ecoworld.menu_root" name="ecoWORLD" sequence="1"/>
+
   </data>
 </odoo>

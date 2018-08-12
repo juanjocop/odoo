@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!--Testimonios-->
+    <!-- Tree Definition -->
+    <record id="testimonio_tree_view" model='ir.ui.view'>
+      <field name="name">Tree Testimonios</field>
+      <field name="model">guiaeco.testimonios</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="image_small" widget="image"/>
+              <field name="partner_id"/>
+              <field name="activo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form Definition -->
+    <record id="testimonios_form_view" model='ir.ui.view'>
+      <field name="name">Form Testimonios</field>
+      <field name="model">guiaeco.testimonios</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <field name="company_type" position="after">
+          <field name="partner_id" placeholder="Elije cliente guia" required="True"/>
+        </field>
+        <notebook position="inside">
+          <page string="Testimonio">
+            <group string="Activar">
+              <field name="activo"/>
+            </group>
+            <group string="Opinion">
+              <field name="calidadPresentacion" widget="selection"/>
+              <field name="calidadTrato" widget="selection"/>
+              <field name="calidadRecomienda"/>
+            </group>
+            <group>
+              <field name="testimonio"/>
+            </group>
+          </page>
+        </notebook>
+      </field>
+    </record>
+
+    <!-- Action clientes testimonios -->
+    <record id="testimonio_action_window" model="ir.actions.act_window">
+      <field name="name">Testimonios</field>
+      <field name="res_model">guiaeco.testimonios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <!-- Menu Categorias -->
+    <menuitem id="testimonios.clientes" name="Testimonios" sequence="4" parent="ecoworld.menu_root"/>
+    <!-- Action Menu -->
+    <menuitem id="testimonios.clientes_lista_guia" name="Clientes" sequence="1" parent="testimonios.clientes" action="testimonio_action_window"/>
+
+  </data>
+</odoo>

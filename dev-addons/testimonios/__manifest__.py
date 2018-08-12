@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Guia ecoWORLD",
+    'name': "Testimonios",
 
     'summary': """
-        Desarrollo de la Guia ecoWORLD""",
+        Modulo para testimonios de clientes de ecoWORLD""",
 
     'description': """
-        Descripción Larga de la guiaaaa
+        Este modulo esta diseñado para mostrar en la web los testimonios de los clientes de ecoWORLD
     """,
 
     'author': "ecoWORLD",
-    'website': "https://www.eco-world.es",
+    'website': "http://www.eco-world.es",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml

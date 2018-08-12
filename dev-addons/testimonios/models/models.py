@@ -12,5 +12,3 @@ class testimonio(models.Model):
     calidadPresentacion = fields.Selection([(1,'Bien'), (2,'Muy Bien'), (3,'Excelente')],string="Presentación")
     calidadTrato = fields.Selection([(1,'Correcto'), (2,'Agradable'), (3,'Excepcional')],string="Trato recibido")
     calidadRecomienda = fields.Boolean(string="Nos Recomienda?")
-    calidadBeneficios = fields.Char(string="Beneficios")
-    calidadValora = fields.Integer(string="Valoración General")
