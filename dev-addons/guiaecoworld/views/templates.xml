@@ -155,7 +155,7 @@
                     <img t-if="cliente.image" t-attf-src="data:image/png;base64, {{cliente.cabecera}}" class="img img-responsive img_cabecera_cliente" />
                 </div>
                 <div class="row text-center">
-                  <h3 id="especialidad"><span class="glyphicon glyphicon-chevron-right"></span>Especialistas en <t t-esc="cliente.especialidad"/><span class="glyphicon glyphicon-chevron-left"></span></h3>
+                  <h3 id="especialidad"><span class="glyphicon glyphicon-cutlery"></span> Especialistas en <t t-esc="cliente.especialidad"/> <span class="glyphicon glyphicon-cutlery"></span></h3>
                 </div>
                 <div class="row">
                   <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -211,8 +211,13 @@
                 <div class="row google-maps map-ficha">
                   <iframe t-attf-src="https://www.google.com/maps/embed?pb={{cliente.mapaEmbed}}" width="600" height="400" frameborder="0" style="border:0"></iframe>
                 </div>
-                <div class="row">
-                  <p class="text-center">Con <span class="ecoworld">ecoWORLD</span> <strong>Ganas Tú, Ganamos Nosotros, Gana El Planeta</strong></p>
+                <div class="row lema">
+                  <h3 class="text-center">Con <span class="ecoworld">ecoWORLD</span> <strong>Ganas Tú, Ganamos Nosotros, Gana El Planeta</strong></h3>
+                </div>
+                <div class="row" style="margin-top:1em;">
+                  <p class="text-center">
+                    <a class="btn btn-success" href="/guiaecoworld">Volver a la guía</a>
+                  </p>
                 </div>
               </div>
             </div>

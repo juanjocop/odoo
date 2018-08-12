@@ -190,6 +190,13 @@ div.container-ficha-cliente h3#especialidad{
   font-size: 42px;
 }
 
+div.lema{
+  padding: 2em;
+  color: white;
+  background-color: #003366;
+  margin: 0px;
+}
+
 /*--------*/
 
 
