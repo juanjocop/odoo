@@ -77,7 +77,7 @@
 }
 
 /*@@font-face {
-  font-family: 'FrankfurtenSB-Medium';
+  font-family: 'Frankfurten';
   src: url('/guiaecoworld/static/src/font/FrankfurtenSB-Medium.otf') format('opentype');
   font-style: normal;
   font-weight: bold;
@@ -121,6 +121,30 @@ div.search-frontend{
 
 .img_cabecera_cliente{
   width:100%;
+}
+
+/*#ultimas-incorporaciones{
+  background-color: #3399cc
+}*/
+
+div.page-header{
+  line-height: 200px;
+}
+
+div.page-header span, div.page-header img{
+  vertical-align: middle;
+}
+
+div.page-header span{
+  font-size: 3em;
+}
+
+div.page-header img{
+  display: inline-block;
+  /*height: auto;*/
+  /*width: auto;*/
+  /*min-width: 100px;*/
+  max-height: 3em;
 }
 
 /*---------------*/

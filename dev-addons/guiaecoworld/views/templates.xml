@@ -26,8 +26,12 @@
         <template id="guiaecoworld_contenido" name="Contenido Guía ecoWORLD">
           <t t-call="website.layout">
             <t t-set="title">Guía ecoWORLD</t>
+            <div class="page-header text-center">
+              <h1><span>Guía </span><img src="guiaecoworld/static/img/ECOWORLDaSecas.png" alt="Guía ecoWORLD" class="img img-responsive"/></h1>
+            </div>
             <!-- === Snippets' area === -->
             <div class="oe_structure" />
+            <!-- buscadores cabecera -->
             <div class="oe_structure">
               <div class="container-fluid">
                 <div class="row">
@@ -46,8 +50,9 @@
                 </div>
               </div>
             </div>
+            <!-- Ultimas incorporaciones -->
             <div class="oe_structure">
-              <div class="container-fluid">
+              <div id="ultimas-incorporaciones" class="container-fluid">
                 <div class="row">
                   <h2 t-if="provincia" class="text-center">Últimas incorporaciones de <strong><t t-esc="provincia" /></strong>:</h2>
                   <h2 t-elif="localidad" class="text-center">Últimas incorporaciones de <strong><t t-esc="localidad" /></strong>:</h2>
@@ -77,9 +82,7 @@
                             </div>
                             <div class="row">
                               <p class="text-center">
-                                <!--<button class="btn-primary">-->
-                                  <a t-attf-href="/guiaecoworld/{{ slug(cliente) }}" class="btn btn-primary">Ver Ficha</a>
-                                <!--</button>-->
+                                <a t-attf-href="/guiaecoworld/{{ slug(cliente) }}" class="btn btn-primary">Ver Ficha</a>
                               </p>
                             </div>
                           </div>
