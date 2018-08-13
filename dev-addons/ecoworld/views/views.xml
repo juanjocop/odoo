@@ -10,6 +10,7 @@
           <field name="enlaceFacebook"/>
         </field>
         <field name="parent_id" position="after">
+          <field name="nombrefiscal" placeholder="Nombre Fiscal" attrs="{'invisible':[('is_company', '!=', True)]}"/>
           <field name="referido" placeholder="Referido por:"/>
         </field>
         <field name="vat" position="after">
